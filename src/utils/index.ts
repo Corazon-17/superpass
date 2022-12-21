@@ -1,7 +1,7 @@
 import { PassOption } from "@/types";
 import getChar from "./getChar";
 import getCharTypes from "./getCharTypes";
-import { getSumCode, random, getTypes } from "./helper";
+import { getSumCode, generateNum, getTypes } from "./helper";
 
 export function strengthen(
   base: string,
@@ -24,8 +24,8 @@ const getResult = (charTypes: Array<string>, key: Array<string>) => {
       let num = getSumCode(str);
 
       for (let i = 0; i < charTypes.length; i++) {
-        result[i] += num * ++idx;
-        num = random(num);
+        result[i] += num * ++idx; // multiply with ++idx so the order of the keys matters
+        num = generateNum(num);
       }
     }
   });

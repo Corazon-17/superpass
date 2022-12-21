@@ -1,5 +1,5 @@
 import { PassOption } from "@/types";
-import { getSumCode, random, getTypes } from "./helper";
+import { getSumCode, generateNum, getTypes } from "./helper";
 
 /**
  * Get list of type for each character with a specified length.
@@ -12,12 +12,12 @@ export default function getCharTypes(base: string, length: number, option: PassO
   const types = getTypes(option);
 
   let charTypes = [];
-  let num = random(getSumCode(base));
+  let num = generateNum(getSumCode(base));
 
   for (let i = 0; i < length; i++) {
     const idx = num % types.length;
     charTypes.push(types[idx]);
-    num = random(num);
+    num = generateNum(num);
   }
 
   return charTypes;

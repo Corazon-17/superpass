@@ -7,7 +7,7 @@ import { AiOutlineThunderbolt } from "react-icons/ai";
 
 function App() {
   const [basePass, setBasePass] = useState<string>("");
-  console.log(basePass)
+  console.log(basePass);
   const [superKey, setSuperKey] = useState<Array<string>>([""]);
   const [option, setOption] = useState<PassOption>({
     lower: true,
@@ -20,26 +20,22 @@ function App() {
   const [error, setError] = useState<string>("");
 
   const giveSuperPower = (): void => {
-    if (basePass == "") {
-      setError("Base password cannot be empty !");
-      setResult("")
-      return;
-    }
+    const error =
+      basePass == ""
+        ? "Base password cannot be empty !"
+        : superKey.join("") == ""
+        ? "Super Key cannot be empty !"
+        : getTypes(option).length < 1
+        ? "Select at least 1 character type !"
+        : "";
 
-    if (superKey.join("") == "") {
-      setError("Super Key cannot be empty !");
-      setResult("")
-      return;
+    if (error) {
+      setError(error);
+      setResult("");
+    } else {
+      setError("");
+      setResult(strengthen(basePass, superKey, passLength, option));
     }
-
-    if (getTypes(option).length < 1) {
-      setError("Select at least 1 character type !");
-      setResult("")
-      return;
-    }
-
-    setError("");
-    setResult(strengthen(basePass, superKey, passLength, option));
   };
 
   return (

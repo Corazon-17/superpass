@@ -20,7 +20,7 @@ export const getSumCode = (str: string) => {
  * @param seed
  * @returns
  */
-export const random = (seed: number) => {
+export const generateNum = (seed: number) => {
   let result = Math.sin(++seed) * 10000 - Math.floor(seed);
 
   return Math.round(Math.abs(result));
