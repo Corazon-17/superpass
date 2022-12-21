@@ -17,8 +17,3 @@ Keep in mind that you can always come back and enter the same combination of bas
 - Vite
 - React
 - Typescript
-
-## Features
-- Easy to use
-- Super fast
-- Not randomly generated
