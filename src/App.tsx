@@ -20,7 +20,7 @@ function App() {
   const [error, setError] = useState<string>("");
 
   const giveSuperPower = (): void => {
-    const error =
+    const errorMsg =
       basePass == ""
         ? "Base password cannot be empty !"
         : superKey.join("") == ""
@@ -29,13 +29,13 @@ function App() {
         ? "Select at least 1 character type !"
         : "";
 
-    if (error) {
-      setError(error);
+    if (errorMsg) {
       setResult("");
     } else {
-      setError("");
       setResult(strengthen(basePass, superKey, passLength, option));
     }
+
+    setError(errorMsg);
   };
 
   return (
