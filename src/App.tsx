@@ -50,7 +50,7 @@ function App() {
             <span className="bg-clip-text bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600">
               SUPER
             </span>
-            <span className="bg-clip-text bg-white">PASS</span>
+            <span className="bg-clip-text text-white">PASS</span>
           </h1>
         </div>
         <p className="text-center font-bold text-white mt-1 mb-4">
