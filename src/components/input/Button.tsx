@@ -8,7 +8,7 @@ interface ButtonProps {
 
 export function Button({ handleClick, children, className }: ButtonProps) {
   return (
-    <button onClick={handleClick} className={"px-2 border-2 border-amber-600 " + className}>
+    <button onClick={handleClick} className={"px-2 border-2 border-amber-500 " + className}>
       {children}
     </button>
   );

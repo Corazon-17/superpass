@@ -14,7 +14,7 @@ export function SuperKey({ value, setValue }: SuperKeyprops) {
   const ShowButton: React.FC = () => {
     return (
       <button
-        className="absolute bottom-2 right-[3.25rem] text-2xl hover:text-amber-500"
+        className="absolute bottom-2 right-[3.25rem] text-2xl hover:text-amber-400"
         onClick={() => setShow(!show)}
       >
         {show ? <BiHide /> : <BiShow />}

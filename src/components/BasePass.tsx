@@ -20,7 +20,7 @@ export function BasePass({ value, setValue }: BasePassProps) {
         handleChange={(e): void => setValue(e.target.value)}
       />
       <button
-        className="absolute bottom-2 right-2 text-2xl hover:text-amber-500"
+        className="absolute bottom-2 right-2 text-2xl hover:text-amber-400"
         onClick={() => setShow(!show)}
       >
         {show ? <BiHide /> : <BiShow />}

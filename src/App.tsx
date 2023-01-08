@@ -39,18 +39,18 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col min-w-screen min-h-screen overflow-x-clip p-0 items-center justify-center bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-amber-600 font-bold">
+    <div className="flex flex-col min-w-screen min-h-screen overflow-x-clip p-0 items-center justify-center bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-amber-500 font-bold">
       <AiOutlineThunderbolt
         size={420}
-        className="fixed z-10 text-yellow-900 animate-pulse"
+        className="fixed z-10 text-yellow-700 animate-pulse"
       />
-      <div className="content px-2 py-4 border-4 border-double border-amber-600 my-4 z-20">
+      <div className="content px-2 py-4 border-4 border-double border-amber-500 my-4 z-20">
         <div className="flex justify-center w-full">
           <h1 className="text-4xl font-extrabold text-transparent tracking-wider">
             <span className="bg-clip-text bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600">
               SUPER
             </span>
-            <span className="bg-clip-text bg-stone-100">PASS</span>
+            <span className="bg-clip-text bg-white">PASS</span>
           </h1>
         </div>
         <p className="text-center font-bold text-white mt-1 mb-4">

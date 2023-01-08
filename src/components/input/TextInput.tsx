@@ -12,7 +12,7 @@ export function TextInput({ type, value, handleChange }: TextInputProps) {
       type={type ? type : "text"}
       value={value}
       onChange={handleChange}
-      className="w-full p-1 bg-transparent border-b-2 border-b-amber-600 outline-none"
+      className="w-full p-1 bg-transparent border-b-2 border-amber-500 outline-none"
     />
   );
 }
