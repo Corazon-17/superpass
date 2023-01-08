@@ -1,5 +1,6 @@
 import { ValueSetter, ChangeEvent } from "@/types";
 import { useState } from "react";
+import { BiHide, BiShow } from "react-icons/bi";
 import { IoMdAdd, IoMdRemove } from "react-icons/io";
 import { Button, CheckBox, TextInput } from "./input";
 
@@ -10,6 +11,16 @@ interface SuperKeyprops {
 
 export function SuperKey({ value, setValue }: SuperKeyprops) {
   const [show, setShow] = useState<boolean>(false);
+  const ShowButton: React.FC = () => {
+    return (
+      <button
+        className="absolute bottom-2 right-[3.25rem] text-2xl hover:text-amber-500"
+        onClick={() => setShow(!show)}
+      >
+        {show ? <BiHide /> : <BiShow />}
+      </button>
+    );
+  };
 
   const addValue = () => {
     let copiedValue = [...value];
@@ -38,7 +49,7 @@ export function SuperKey({ value, setValue }: SuperKeyprops) {
       <div className="grid gap-2">
         {value.length > 1 &&
           [...Array(value.length - 1)].map((_, index) => (
-            <div key={index} className="flex justify-between gap-2">
+            <div key={index} className="flex relative justify-between gap-2">
               <TextInput
                 type={show ? "text" : "password"}
                 value={value[index]}
@@ -49,22 +60,18 @@ export function SuperKey({ value, setValue }: SuperKeyprops) {
               </Button>
             </div>
           ))}
-        <div className="flex justify-between gap-2">
+        <div className="flex relative justify-between gap-2">
           <TextInput
             type={show ? "text" : "password"}
             value={value[value.length - 1]}
             handleChange={(e): void => updateValue(e, value.length - 1)}
           />
+          <ShowButton />
           <Button handleClick={addValue}>
             <IoMdAdd />
           </Button>
         </div>
       </div>
-      <CheckBox
-        label="Show Key"
-        checked={show}
-        handleChange={(): void => setShow(!show)}
-      />
     </div>
   );
 }

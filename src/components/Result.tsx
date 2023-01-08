@@ -19,15 +19,15 @@ export function Result({ value }: ResultProps) {
         <input
           type={show ? "text" : "password"}
           value={value}
-          className="w-full p-1 bg-yellow-900"
+          className="w-full px-1 py-2 bg-yellow-900"
           disabled
         />
         <MdContentCopy
           size={20}
-          className="hidden group-hover:block absolute right-2 h-full text-yellow-600"
+          className="hidden group-hover:block cursor-pointer absolute right-2 h-full text-yellow-600"
         />
         <p className="hidden group-hover:block absolute -top-6 right-0">
-          Click to copy
+          *click to copy
         </p>
       </div>
 

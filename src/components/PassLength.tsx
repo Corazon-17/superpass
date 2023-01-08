@@ -1,5 +1,6 @@
 import { ChangeEvent, ValueSetter } from "@/types";
-import { TextInput } from "./input";
+import { IoMdAdd, IoMdRemove } from "react-icons/io";
+import { Button, TextInput } from "./input";
 
 interface PassLengthProps {
   value: number;
@@ -11,16 +12,28 @@ export function PassLength({ value, setValue }: PassLengthProps) {
     const newValue = e.target.value;
 
     if (newValue.trim() === "") {
-      setValue(0);
+      setValue(1);
     } else if (!Number.isNaN(Number(newValue))) {
-      setValue(Number(newValue))
+      setValue(Number(newValue));
     }
   };
-  
+
   return (
     <div className="block">
       <label>Password Length</label>
-      <TextInput value={value.toString()} handleChange={handleChange} />
+      <div className="flex gap-2">
+        <TextInput value={value.toString()} handleChange={handleChange} />
+        <Button
+          handleClick={() => {
+            value !== 1 && setValue(value - 1);
+          }}
+        >
+          <IoMdRemove />
+        </Button>
+        <Button handleClick={() => setValue(value + 1)}>
+          <IoMdAdd />
+        </Button>
+      </div>
     </div>
   );
 }

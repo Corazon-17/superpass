@@ -39,15 +39,25 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col min-w-screen min-h-screen overflow-x-clip p-0 items-center justify-center bg-gradient-to-r from-yellow-900 via-black to-yellow-900 text-yellow-600">
+    <div className="flex flex-col min-w-screen min-h-screen overflow-x-clip p-0 items-center justify-center bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-amber-600 font-bold">
       <AiOutlineThunderbolt
         size={420}
-        className="fixed z-10 text-yellow-800 animate-pulse"
+        className="fixed z-10 text-yellow-900 animate-pulse"
       />
-      <div className="content p-2 border-4 border-yellow-900 my-4 z-20">
-        <h2 className="text-3xl font-bold text-center">Superpass</h2>
-        <p className="text-md text-center mt-2 mb-6">
-          Make your weak password stronger.
+      <div className="content px-2 py-4 border-4 border-double border-amber-600 my-4 z-20">
+        <div className="flex justify-center w-full">
+          <h1 className="text-4xl font-extrabold text-transparent tracking-wider">
+            <span className="bg-clip-text bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600">
+              SUPER
+            </span>
+            <span className="bg-clip-text bg-stone-100">PASS</span>
+          </h1>
+        </div>
+        <p className="text-center font-bold text-white mt-1 mb-4">
+          Make your weak password{" "}
+          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600">
+            Stronger
+          </span>
         </p>
 
         <div className="grid gap-4">
@@ -56,10 +66,10 @@ function App() {
           <PassLength value={passLength} setValue={setPassLength} />
           <Option value={option} setValue={setOption} />
           <Button
-            className="py-2 text-lg font-bold border-4"
+            className="py-2 text-2xl font-extrabold"
             handleClick={giveSuperPower}
           >
-            Strengthen
+            Boost
           </Button>
           {error && <p>{error}</p>}
         </div>
