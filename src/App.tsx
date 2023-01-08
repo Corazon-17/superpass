@@ -46,11 +46,11 @@ function App() {
       />
       <div className="content px-2 py-4 border-4 border-double border-amber-500 my-4 z-20">
         <div className="flex justify-center w-full">
-          <h1 className="text-4xl font-extrabold text-transparent tracking-wider">
-            <span className="bg-clip-text bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600">
+          <h1 className="text-4xl font-extrabold tracking-wider">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600">
               SUPER
             </span>
-            <span className="bg-clip-text text-white">PASS</span>
+            <span className="text-white">PASS</span>
           </h1>
         </div>
         <p className="text-center font-bold text-white mt-1 mb-4">
